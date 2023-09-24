@@ -10,7 +10,6 @@ const port = 8080
 
 type application struct {
 	Domain string
-
 }
 
 func main() {
@@ -22,8 +21,6 @@ func main() {
 
 	// connect to the database
 	log.Println("Starting application on port: ", port)
-
-	http.HandleFunc("/", Hello)
 
 	// start a web server
 	err := http.ListenAndServe(fmt.Sprintf(":%d", port), app.routes());
