@@ -14,6 +14,10 @@ type PostgresDBRepo struct {
 
 const dbTimeout = time.Second * 3
 
+func (m *PostgresDBRepo) Connection() *sql.DB {
+	return m.DB
+}
+
 func (m *PostgresDBRepo) AllMovies() ([]*models.Movie, error) {
 
 	// if there is no interaction for 3 seconds, it will cancel
